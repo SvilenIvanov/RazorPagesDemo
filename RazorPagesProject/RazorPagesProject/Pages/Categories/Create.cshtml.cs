@@ -21,6 +21,12 @@ namespace RazorPagesProject.Pages.Categories
         }
 
         public async Task<IActionResult> OnPost() {
+            if (Category.Name == Category.DisplayOrder.ToString()) {
+                ModelState.AddModelError("NameCantMatchDisplayOrder", "The category name cannot be the same as the display order.");
+            }
+            if(Category.DisplayOrder > 500) {
+                ModelState.AddModelError("DisplayOrderExceeds500", "The display order number cannot exceed 500.");
+            }
             if (ModelState.IsValid) {
                 await _db.AddAsync(Category);
                 await _db.SaveChangesAsync();
