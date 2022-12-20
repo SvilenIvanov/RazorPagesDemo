@@ -21,9 +21,12 @@ namespace RazorPagesProject.Pages.Categories
         }
 
         public async Task<IActionResult> OnPost() {
-            await _db.AddAsync(Category);
-            await _db.SaveChangesAsync();
-            return RedirectToPage("Index");
+            if (ModelState.IsValid) {
+                await _db.AddAsync(Category);
+                await _db.SaveChangesAsync();
+                return RedirectToPage("Index");
+            }
+            return Page();
         }
     }
 }
