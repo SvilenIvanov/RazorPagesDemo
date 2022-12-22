@@ -24,7 +24,7 @@ namespace RazorPagesProject.Pages.Categories
 
         public async Task<IActionResult> OnPost() {
             if (Category.Name == Category.DisplayOrder.ToString()) {
-                ModelState.AddModelError("NameCantMatchDisplayOrder", "The category name cannot be the same as the display order.");
+                ModelState.AddModelError("Category.Name", "The category name cannot be the same as the display order.");
             }
             if (ModelState.IsValid) {
                 await _db.AddAsync(Category);
