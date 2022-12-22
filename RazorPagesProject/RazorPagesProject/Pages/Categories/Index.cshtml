@@ -36,14 +36,15 @@
                         Value of display order: @category.DisplayOrder
                     </td>
                     <td>
-                        <a asp-page="Edit" class="btn btn-primary mx-2">
-                            <i class="bi bi-pencil">&nbspEdit</i>
-                        </a>
-                    </td>
-                    <td>
-                        <a asp-page="Delete" class="btn btn-primary mx-2">
-                            <i class="bi bi-trash3">&nbspDelete</i>
-                        </a>
+                        <div class="w-75 btn-group" role="group">
+                                <a asp-page="Edit" class="btn btn-sm btn-primary mx-2">
+                                    <i class="bi bi-pencil">&nbspEdit</i>
+                                </a>
+                                <a asp-page="Delete" class="btn btn-sm btn-danger mx-2">
+                                    <i class="bi bi-trash3">&nbspDelete</i>
+                                </a>
+
+                        </div>
                     </td>
                 </tr>
             }
