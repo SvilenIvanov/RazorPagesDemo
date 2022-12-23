@@ -2,10 +2,11 @@
 @model RazorPagesProject.Pages.Categories.IndexModel
 
 @if (TempData["SuccessOperation"] != null){
-    <h3>
-        @TempData["SuccessOperation"]
-    </h3>
-
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <script type="text/javascript">
+        toastr.success('@TempData["SuccessOperation"]');
+    </script>
 }
 <div class ="container p-3">
     <div class="row pt-4">
