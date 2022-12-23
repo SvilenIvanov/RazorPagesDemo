@@ -30,6 +30,7 @@ namespace RazorPagesProject.Pages.Categories
             if (category != null) {
                 _db.Remove(category);
                 _db.SaveChanges();
+                TempData["SuccessOperation"] = "Category was deleted successfully.";
                 return RedirectToPage("Index");
             }
 

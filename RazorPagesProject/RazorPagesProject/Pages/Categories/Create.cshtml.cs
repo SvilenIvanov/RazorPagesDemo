@@ -29,6 +29,7 @@ namespace RazorPagesProject.Pages.Categories
             if (ModelState.IsValid) {
                 await _db.AddAsync(Category);
                 await _db.SaveChangesAsync();
+                TempData["SuccessOperation"] = "Category was created successfully.";
                 return RedirectToPage("Index");
             }
             return Page();

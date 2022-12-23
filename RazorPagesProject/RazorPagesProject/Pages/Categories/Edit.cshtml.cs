@@ -32,6 +32,7 @@ namespace RazorPagesProject.Pages.Categories
             if (ModelState.IsValid) {
                 _db.Update(Category);
                 _db.SaveChanges();
+                TempData["SuccessOperation"] = "Category was edited successfully.";
                 return RedirectToPage("Index");
             }
             return Page();
