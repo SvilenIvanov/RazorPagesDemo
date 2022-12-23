@@ -1,13 +1,7 @@
 ﻿@page
 @model RazorPagesProject.Pages.Categories.IndexModel
 
-@if (TempData["SuccessOperation"] != null){
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
-    <script type="text/javascript">
-        toastr.success('@TempData["SuccessOperation"]');
-    </script>
-}
+<partial name="Shared\_Notification" />
 <div class ="container p-3">
     <div class="row pt-4">
         <div class="col-6">
